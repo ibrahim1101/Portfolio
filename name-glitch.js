@@ -20,12 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
       letters.push({ glyph: glyph, original: character });
     });
   });
+  let phaseTimer = null;
   let nextTimer = null;
   let restoreTimer = null;
   let active = null;
   let lastIndex = -1;
   function restore() {
     if (!active) return;
+    window.clearTimeout(phaseTimer);
+    active.glyph.classList.remove("pixel-out", "pixel-in");
     active.glyph.textContent = active.original;
     active.glyph.dataset.glyph = active.original;
     active.glyph.classList.remove("binary-active");
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function stop() {
     window.clearTimeout(nextTimer);
     window.clearTimeout(restoreTimer);
+    window.clearTimeout(phaseTimer);
     restore();
   }
   function schedule() {
@@ -45,13 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       lastIndex = index;
       active = letters[index];
-      active.glyph.textContent = Math.random() < 0.5 ? "0" : "1";
-      active.glyph.dataset.glyph = active.glyph.textContent;
-      active.glyph.classList.add("binary-active");
+      const target = Math.random() < 0.5 ? "0" : "1";
+      active.glyph.classList.add("pixel-out");
+      phaseTimer = window.setTimeout(function () {
+        if (!active) return;
+        active.glyph.textContent = target;
+        active.glyph.dataset.glyph = target;
+        active.glyph.classList.remove("pixel-out");
+        active.glyph.classList.add("pixel-in", "binary-active");
+      }, 135);
       restoreTimer = window.setTimeout(function () {
         restore();
         schedule();
-      }, 480);
+      }, 650);
     }, 1700 + Math.random() * 1900);
   }
   document.addEventListener("visibilitychange", function () {
