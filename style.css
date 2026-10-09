@@ -271,3 +271,19 @@ header .github{border-radius:999px!important}
 .journey-link:hover,.journey-link:focus-visible{border-color:#ee6d2d;background:#241914}
 .journey-link span:last-child{color:#ee6d2d;font-size:17px}
 @media(max-width:760px){.journey-links{grid-template-columns:1fr}.project-journey{padding:22px}.software-evidence{min-height:260px}}
+
+/* Project quick-switch menu: hover, keyboard focus and touch-friendly tap */
+.project-switcher{position:relative;display:inline-flex;z-index:30}
+.project-switcher-trigger{display:inline-flex!important;align-items:center;gap:12px;white-space:nowrap}
+.project-switcher-trigger span{font-size:16px;color:#ee6d2d;transition:transform .2s}
+.project-switcher-menu{position:absolute;top:calc(100% + 9px);left:0;min-width:245px;padding:9px;background:#101719;border:1px solid #38464b;border-radius:11px;box-shadow:0 20px 55px #0009;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.project-switcher-menu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:13px}
+.project-switcher:hover .project-switcher-menu,.project-switcher:focus-within .project-switcher-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.project-switcher:hover .project-switcher-trigger span,.project-switcher:focus-within .project-switcher-trigger span{transform:rotate(180deg)}
+.project-switcher-heading{padding:10px 12px 9px;font-size:10px;font-weight:750;letter-spacing:.16em;color:#8b9ba2}
+.project-switcher-menu a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:11px 12px;border-radius:6px;color:#e3e8e9;font-size:13px;text-decoration:none;transition:background .15s,color .15s}
+.project-switcher-menu a span{color:#e97840}
+.project-switcher-menu a:hover,.project-switcher-menu a:focus-visible{background:#2b211e;color:#ff9b69;outline:1px solid #6d3b28}
+.project-switcher-menu .project-switcher-all{border-top:1px solid #344046;border-radius:0;margin-top:7px;padding-top:14px;color:#f18a50}
+@media(max-width:640px){.project-switcher-menu{min-width:min(250px,80vw)}}
+@media(prefers-reduced-motion:reduce){.project-switcher-menu,.project-switcher-trigger span{transition:none}}
