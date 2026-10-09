@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const glyph = document.createElement("span");
       glyph.className = "name-glyph";
       glyph.textContent = character;
+      glyph.dataset.glyph = character;
       slot.appendChild(glyph);
       word.appendChild(slot);
       letters.push({ glyph: glyph, original: character });
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function restore() {
     if (!active) return;
     active.glyph.textContent = active.original;
+    active.glyph.dataset.glyph = active.original;
     active.glyph.classList.remove("binary-active");
     active = null;
   }
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       lastIndex = index;
       active = letters[index];
       active.glyph.textContent = Math.random() < 0.5 ? "0" : "1";
+      active.glyph.dataset.glyph = active.glyph.textContent;
       active.glyph.classList.add("binary-active");
       restoreTimer = window.setTimeout(function () {
         restore();
