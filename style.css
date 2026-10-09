@@ -75,3 +75,29 @@ main{max-width:1440px;padding:0 clamp(30px,5.5vw,105px)}
 
 /* Abstract code-like preview panels: decorative, not screenshots */
 .projects-heading{display:flex;justify-content:space-between;align-items:center;gap:35px}.projects-heading p{max-width:365px;font-size:14px}.project-preview{height:155px;margin:-4px -4px 20px;padding:22px;border:1px solid #283238;border-radius:6px;position:relative;overflow:hidden;background:linear-gradient(125deg,#131b20,#080d10 72%)}.project-preview:after{content:"";position:absolute;right:10%;top:20%;width:36%;height:65%;background:radial-gradient(#ff702c5c 1px,transparent 1.5px) 0 0/12px 12px;mask-image:linear-gradient(90deg,transparent,#000)}.preview-dot{display:block;width:9px;height:9px;background:#ff702c;border-radius:50%;margin-bottom:17px}.preview-line{display:block;width:47%;height:5px;background:#35454b;border-radius:4px;margin:10px 0}.preview-line.short{width:30%;background:#a24b28}.preview-block{position:absolute;bottom:17px;left:22px;width:53%;height:29px;border:1px solid #2e4048;border-radius:4px;background:repeating-linear-gradient(90deg,#17242b 0 14px,#0d1519 14px 18px)}.card{overflow:hidden}.card:hover .project-preview{border-color:#ff702c65}.card>a{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid #ff702c5b;border-radius:5px;background:#28180f;color:#ff9a64;font-weight:700}.card>a:hover{background:#ff702c;color:#0b0d0e}@media(max-width:760px){.projects-heading{display:block}.projects-heading p{max-width:600px}}
+
+/* Exact homepage composition based on approved reference; other pages untouched */
+.landing-body{background:#080b0d}
+.landing-body:before{display:none}
+.landing-header{height:72px;min-height:72px;padding:0 clamp(28px,5.5vw,92px);background:#080b0df7}
+.landing-header nav{gap:clamp(8px,1.4vw,23px)}
+.landing-header nav a{font-size:13px;padding:16px 8px 14px}
+.landing-header .github{font-size:13px}
+.landing-body .home-page{width:100%;max-width:none;margin:0;padding:0;position:relative;overflow:hidden;min-height:calc(100svh - 72px);background:radial-gradient(ellipse at 70% 46%,#101619 0%,#080b0d 62%)}
+.landing-body .home-page:before,.landing-body .home-page:after{content:"";position:absolute;pointer-events:none;z-index:0;background-image:radial-gradient(circle,#f16c2e 1.15px,transparent 1.35px);background-size:15px 15px}
+.landing-body .home-page:before{width:44%;height:68%;right:2%;top:1%;opacity:.67;mask-image:radial-gradient(ellipse at 58% 35%,#000 3%,transparent 71%)}
+.landing-body .home-page:after{width:35%;height:44%;left:0;bottom:0;opacity:.75;mask-image:radial-gradient(ellipse at 0% 100%,#000 1%,transparent 76%)}
+.landing-body .home-page .hero{position:relative;z-index:1;max-width:none;width:100%;min-height:calc(100svh - 72px);padding:clamp(55px,8vh,105px) clamp(36px,10.2vw,195px) 110px;display:flex;justify-content:center;align-items:flex-start;text-align:left;margin:0}
+.home-hero-content{width:100%;max-width:1000px}
+.landing-body .hero .eyebrow{font-size:12px;color:#858e93;letter-spacing:.12em}
+.landing-body .hero h1{font-size:clamp(82px,9vw,150px);line-height:.95;letter-spacing:-.07em;margin:28px 0 24px;font-weight:800;max-width:850px}
+.landing-body .hero h1 span{display:block;color:#ff7431}
+.landing-body .hero .lead{font-size:clamp(17px,1.55vw,23px);line-height:1.5;color:#e9ecee;font-weight:450;letter-spacing:-.018em;max-width:1000px}
+.landing-body .hero p{font-size:clamp(16px,1.18vw,19px);line-height:1.7;max-width:740px;color:#aab2b7;margin:24px 0 0}
+.landing-body .hero .actions{margin-top:33px;gap:14px}
+.landing-body .hero .btn{padding:16px 29px;min-width:155px;text-align:center;border-radius:5px}
+.landing-body .hero .btn.secondary{min-width:145px}
+.scroll-indicator{position:absolute;right:5.3%;bottom:40px;color:#626c73;font-size:10px;letter-spacing:.12em;display:flex;gap:15px;align-items:flex-end}
+.scroll-indicator span{display:block;width:1px;height:49px;background:linear-gradient(transparent,#8b969e)}
+.landing-body footer{position:relative;background:#080b0d}
+@media(max-width:760px){.landing-header{height:auto;min-height:72px;padding:13px 5%}.landing-header nav{order:3;width:100%;overflow:auto}.landing-body .home-page .hero{min-height:calc(100svh - 130px);padding:70px 7% 105px}.landing-body .hero h1{font-size:clamp(72px,14vw,110px)}.landing-body .hero .lead{font-size:16px}.landing-body .hero p{font-size:16px}.landing-body .home-page:before{width:75%;opacity:.45}.landing-body .home-page:after{width:55%}.scroll-indicator{right:7%;bottom:24px;font-size:9px}}
