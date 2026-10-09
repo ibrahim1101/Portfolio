@@ -195,3 +195,15 @@ header .logo,header nav,header .github{position:relative;z-index:1}
 header nav{isolation:auto!important}
 header .github,header .github:hover,header .github:focus-visible{background:transparent!important;border-color:transparent!important;box-shadow:none!important;transform:none!important;color:#fff!important}
 header .github{border-radius:999px!important}
+
+/* nScout project-card visual experiment — clearly conceptual, not a screenshot */
+.project-preview-experiment{height:155px;display:flex;flex-direction:column;justify-content:space-between;padding:15px 18px;background:radial-gradient(ellipse at 76% 70%,rgba(238,109,45,.12),transparent 55%),linear-gradient(135deg,#121b20,#080c0e 80%);border:1px solid #344047;border-radius:8px}
+.project-preview-experiment:after{display:none!important}
+.experiment-top,.experiment-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.experiment-mark{font-weight:850;color:#f0f2f2;font-size:18px;letter-spacing:-.05em}
+.experiment-mark span{color:#ee6d2d}
+.experiment-label,.experiment-bottom{font-size:9px;letter-spacing:.13em;color:#819099;font-weight:700}
+.experiment-graph{display:flex;align-items:flex-end;gap:5px;height:58px;border-bottom:1px solid #334048;background:repeating-linear-gradient(to top,transparent 0 17px,#ffffff0b 18px 19px);padding:0 2px}
+.experiment-graph span{flex:1;max-width:17px;min-width:3px;border-radius:3px 3px 0 0;background:linear-gradient(to top,#87401e,#ff7939);opacity:.8}
+.experiment-graph span:nth-child(3n){background:linear-gradient(to top,#344b52,#8ca7b0);opacity:.65}
+.experiment-bottom i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#ee6d2d;margin-right:5px;vertical-align:1px}
