@@ -2,7 +2,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("header nav[aria-label='Main navigation']");
   if (!nav) return;
+  const header = nav.closest("header");
+  const github = header && header.querySelector("a.github");
   const links = Array.from(nav.querySelectorAll("a[href]"));
+  if (github) links.push(github);
   let selected = nav.querySelector("a[aria-current='page']") || links[0];
   if (!selected) return;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -13,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   svg.setAttribute("focusable", "false");
   const shape = document.createElementNS(ns, "path");
   svg.appendChild(shape);
-  nav.prepend(svg);
+  header.prepend(svg);
   let motion = null, raf = 0;
   function box(link) {
-    const n=nav.getBoundingClientRect(), b=link.getBoundingClientRect();
+    const n=header.getBoundingClientRect(), b=link.getBoundingClientRect();
     const h=Math.min(40,b.height-2);
     return {cx:b.left-n.left+b.width/2, cy:b.top-n.top+b.height/2, w:b.width, h:h};
   }
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       " V "+(y+r)+" A "+r+" "+r+" 0 0 1 "+(x+r)+" "+y+" Z";
   }
   function paint(b) {
-    const n=nav.getBoundingClientRect();
+    const n=header.getBoundingClientRect();
     svg.setAttribute("viewBox","0 0 "+Math.max(1,n.width)+" "+Math.max(1,n.height));
     shape.setAttribute("d",capsule(b.cx,b.cy,b.w,b.h));
   }
@@ -42,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const p=smooth(t), neck=Math.pow(Math.sin(Math.PI*t),1.25);
     // A single travelling droplet: full capsule -> narrow droplet -> full capsule.
     // Avoid spanning the whole gap between options.
-    const w=interpolate(motion.from.w,motion.to.w,p)*(1-.56*neck);
-    const h=interpolate(motion.from.h,motion.to.h,p)*(1-.18*neck);
+    const w=Math.max(20,interpolate(motion.from.w,motion.to.w,p)*(1-.50*neck));
+    const h=Math.max(20,interpolate(motion.from.h,motion.to.h,p)*(1-.13*neck));
     position={cx:interpolate(motion.from.cx,motion.to.cx,p),cy:interpolate(motion.from.cy,motion.to.cy,p),w:w,h:h};
     paint(position);
     if(t<1) raf=requestAnimationFrame(animate);
@@ -58,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
       position=dest;motion=null;paint(position);return;
     }
     const distance=Math.abs(dest.cx-position.cx);
-    motion={from:{...position},to:dest,start:performance.now(),duration:Math.min(610,Math.max(360,290+distance*.52))};
+    motion={from:{...position},to:dest,start:performance.now(),duration:Math.min(520,Math.max(270,230+distance*.34))};
     raf=requestAnimationFrame(animate);
   }
   links.forEach(function(link){
@@ -67,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click",function(event){
       if(event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target==="_blank")return;
       const dest=new URL(link.href,location.href);
-      if(dest.origin!==location.origin || dest.pathname===location.pathname || reduced.matches)return;
+      if(link===github || dest.origin!==location.origin || dest.pathname===location.pathname || reduced.matches)return;
       event.preventDefault();
       move(link,false);
       window.setTimeout(function(){location.assign(link.href);},motion?motion.duration:0);
