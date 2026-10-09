@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let restoreTimer = null;
   let active = null;
   let lastIndex = -1;
+  // Alternate binary digits so both 0 and 1 are guaranteed to appear.
+  let nextBinary = Math.random() < 0.5 ? "0" : "1";
   function restore() {
     if (!active) return;
     window.clearTimeout(phaseTimer);
@@ -49,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       lastIndex = index;
       active = letters[index];
-      const target = Math.random() < 0.5 ? "0" : "1";
+      const target = nextBinary;
+      nextBinary = nextBinary === "0" ? "1" : "0";
       active.glyph.classList.add("pixel-out");
       phaseTimer = window.setTimeout(function () {
         if (!active) return;
