@@ -178,3 +178,11 @@ header nav .nav-venom path{fill:#ee6d2d}
 header nav a{position:relative;z-index:1;color:#fff!important;border:0!important;border-radius:999px!important}
 header nav a[aria-current=page]{background:transparent!important;box-shadow:none!important}
 header nav .nav-droplet{display:none!important}
+
+/* Refined navigation geometry and hover-only GitHub treatment */
+header nav{gap:16px!important}
+header nav a{padding:11px 20px!important;line-height:20px!important;white-space:nowrap!important;border-radius:999px!important}
+header nav .nav-venom{filter:drop-shadow(0 2px 5px rgba(238,109,45,.12))!important}
+header .github{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+header .github:hover,header .github:focus-visible{border-color:#ee6d2d!important;background:rgba(238,109,45,.11)!important;box-shadow:none!important;transform:none!important}
+@media(max-width:760px){header nav{gap:8px!important}header nav a{padding:10px 16px!important}}
