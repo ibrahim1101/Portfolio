@@ -127,3 +127,15 @@ main{max-width:1440px;padding:0 clamp(30px,5.5vw,105px)}
 @media(prefers-reduced-motion:reduce){#animated-name .name-letter .name-glyph{transition:none!important}}
 
 #animated-name .name-letter::before{content:attr(data-original);white-space:pre}
+
+/* Original dual-tone inline display treatment — no third-party font assets */
+#animated-name{font-family:"Arial Black","Arial",sans-serif;font-weight:900;letter-spacing:-.07em}
+#animated-name .name-first{--name-fill:#f3f4f4;--name-line:#ff742f}
+#animated-name .name-last{--name-fill:#ff7431;--name-line:#f3f4f4}
+#animated-name .name-word,#animated-name .name-word .name-glyph{color:var(--name-fill)!important}
+#animated-name .name-letter{position:relative;display:inline-grid;grid-template-columns:1fr;vertical-align:baseline}
+#animated-name .name-letter::before{content:attr(data-original);grid-area:1/1;visibility:hidden}
+#animated-name .name-glyph{position:relative;grid-area:1/1;display:block;color:var(--name-fill)!important;-webkit-text-stroke:0 transparent}
+#animated-name .name-glyph::after{content:attr(data-glyph);position:absolute;inset:0;pointer-events:none;color:transparent;-webkit-text-stroke:clamp(.55px,.075vw,1.1px) var(--name-line);opacity:.85}
+#animated-name .name-glyph.binary-active::after{opacity:1}
+@supports not (-webkit-text-stroke:1px red){#animated-name .name-glyph::after{display:none}}
