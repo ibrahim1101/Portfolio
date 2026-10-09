@@ -254,3 +254,20 @@ header .github{border-radius:999px!important}
 .project-page .detail-tabs{margin-top:56px}
 .project-page .project-copy{padding-bottom:24px}
 @media(max-width:760px){.project-page .detail{grid-template-columns:1fr}.case-study-art .project-preview-experiment{height:230px}.project-page .detail-tabs{margin-top:34px}}
+
+/* Actual-software media slots and linked engineering journey */
+.software-evidence{min-height:290px;display:flex;flex-direction:column;overflow:hidden;border:1px solid #364249;border-radius:12px;background:radial-gradient(circle at 80% 25%,#ed6b2d14,transparent 48%),linear-gradient(140deg,#141d22,#090d10);box-shadow:0 18px 55px #0004}
+.software-evidence-head,.software-evidence-foot{display:flex;align-items:center;gap:10px;padding:15px 20px;border-bottom:1px solid #29363c;color:#b2c1c6;font-size:10px;font-weight:750;letter-spacing:.14em}
+.software-evidence-dot{width:7px;height:7px;border-radius:50%;background:#ee6d2d;box-shadow:0 0 12px #ee6d2d88}
+.software-evidence-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px 28px}
+.software-evidence-body strong{font-size:20px;color:#f0f2f2}
+.software-evidence-body p{font-size:13px;max-width:390px;margin:13px auto 0}
+.software-evidence-foot{border-bottom:0;border-top:1px solid #29363c;color:#839299;font-size:9px}
+.project-journey{margin-top:55px;padding:35px;border:1px solid #30383d;border-radius:12px;background:linear-gradient(140deg,#14191b,#0c0f11)}
+.project-journey h2{font-size:clamp(24px,3vw,34px);margin:12px 0}
+.project-journey>p{max-width:720px;font-size:14px}
+.journey-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:25px}
+.journey-link{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 19px;border:1px solid #344047;border-radius:8px;background:#101719;color:#f0f2f2;font-size:13px;font-weight:650;transition:border-color .2s,background .2s}
+.journey-link:hover,.journey-link:focus-visible{border-color:#ee6d2d;background:#241914}
+.journey-link span:last-child{color:#ee6d2d;font-size:17px}
+@media(max-width:760px){.journey-links{grid-template-columns:1fr}.project-journey{padding:22px}.software-evidence{min-height:260px}}
