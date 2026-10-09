@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
   svg.setAttribute("class", "nav-venom");
   svg.setAttribute("aria-hidden", "true");
   svg.setAttribute("focusable", "false");
+  svg.setAttribute("preserveAspectRatio", "none");
   const shape = document.createElementNS(ns, "path");
   svg.appendChild(shape);
   header.prepend(svg);
   let motion = null, raf = 0;
   function box(link) {
-    const n=header.getBoundingClientRect(), b=link.getBoundingClientRect();
+    const n=svg.getBoundingClientRect(), b=link.getBoundingClientRect();
     const h=Math.min(40,b.height-2);
     return {cx:b.left-n.left+b.width/2, cy:b.top-n.top+b.height/2, w:b.width, h:h};
   }
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       " V "+(y+r)+" A "+r+" "+r+" 0 0 1 "+(x+r)+" "+y+" Z";
   }
   function paint(b) {
-    const n=header.getBoundingClientRect();
+    const n=svg.getBoundingClientRect();
     svg.setAttribute("viewBox","0 0 "+Math.max(1,n.width)+" "+Math.max(1,n.height));
     shape.setAttribute("d",capsule(b.cx,b.cy,b.w,b.h));
   }
