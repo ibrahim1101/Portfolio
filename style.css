@@ -154,3 +154,9 @@ header nav a:focus-visible{outline:2px solid #ff742f;outline-offset:4px;border-r
 .landing-body .scroll-indicator{display:none!important}
 @media(max-width:760px){header nav{gap:3px}header nav a{font-size:13px;font-weight:700;padding:11px 12px}}
 @media(prefers-reduced-motion:reduce){header nav .nav-droplet{transition:none!important}header nav a{transition:none!important}}
+
+/* v0.8 — solid orange sliding navigation tab, white labels, no underline */
+header nav a,header nav a:hover,header nav a[aria-current=page]{border-bottom:0!important;text-decoration:none!important;color:#fff!important}
+header nav a{padding-top:12px;padding-bottom:12px}
+header nav .nav-droplet{border-radius:10px!important;background:#ee6d2d!important;border:1px solid #ff8647!important;box-shadow:inset 0 1px 0 #ffffff35,0 5px 18px #ee6d2d25!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+header nav a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:8px}
