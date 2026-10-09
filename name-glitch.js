@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Array.from(original).forEach(function (character) {
       const slot = document.createElement("span");
       slot.className = "name-letter";
+      slot.dataset.original = character;
       const glyph = document.createElement("span");
       glyph.className = "name-glyph";
       glyph.textContent = character;
