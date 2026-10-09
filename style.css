@@ -287,3 +287,10 @@ header .github{border-radius:999px!important}
 .project-switcher-menu .project-switcher-all{border-top:1px solid #344046;border-radius:0;margin-top:7px;padding-top:14px;color:#f18a50}
 @media(max-width:640px){.project-switcher-menu{min-width:min(250px,80vw)}}
 @media(prefers-reduced-motion:reduce){.project-switcher-menu,.project-switcher-trigger span{transition:none}}
+
+/* Project detail action button alignment and clean wide chevron */
+.project-page .detail .actions>.btn:not(.secondary){display:inline-flex;align-items:center;justify-content:center;text-align:center;color:#fff;line-height:1.25}
+.project-page .detail .project-switcher-trigger{display:inline-flex!important;align-items:center;justify-content:center;gap:11px;line-height:1.25;text-align:center}
+.project-page .project-switcher-chevron{width:15px;height:10px;display:block;flex:none;color:#ff7939;transform-origin:center;transition:transform .2s ease}
+.project-page .project-switcher:hover .project-switcher-chevron,.project-page .project-switcher:focus-within .project-switcher-chevron{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.project-page .project-switcher-chevron{transition:none}}
