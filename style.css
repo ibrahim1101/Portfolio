@@ -294,3 +294,21 @@ header .github{border-radius:999px!important}
 .project-page .project-switcher-chevron{width:15px;height:10px;display:block;flex:none;color:#ff7939;transform-origin:center;transition:transform .2s ease}
 .project-page .project-switcher:hover .project-switcher-chevron,.project-page .project-switcher:focus-within .project-switcher-chevron{transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.project-page .project-switcher-chevron{transition:none}}
+
+/* Homepage binary glitch: short pixelated dissolve/reassembly, no layout shift */
+#animated-name .name-glyph{--pixel-opacity:1}
+#animated-name .name-glyph.pixel-out{animation:binary-pixel-out 140ms steps(4,end) both}
+#animated-name .name-glyph.pixel-in{animation:binary-pixel-in 240ms steps(5,end) both}
+@keyframes binary-pixel-out{
+0%{filter:none;opacity:1;clip-path:inset(0)}
+25%{filter:contrast(1.6);opacity:.95;clip-path:polygon(0 0,100% 0,100% 27%,68% 27%,68% 45%,100% 45%,100% 100%,0 100%)}
+50%{filter:contrast(2);opacity:.75;clip-path:polygon(0 0,65% 0,65% 20%,100% 20%,100% 46%,38% 46%,38% 65%,100% 65%,100% 100%,0 100%)}
+75%{filter:contrast(2);opacity:.5;clip-path:polygon(0 0,100% 0,100% 15%,50% 15%,50% 35%,100% 35%,100% 58%,20% 58%,20% 83%,100% 83%,100% 100%,0 100%)}
+100%{filter:contrast(2);opacity:.18;clip-path:inset(0 0 0 0)}
+}
+@keyframes binary-pixel-in{
+0%{filter:contrast(2);opacity:.22;clip-path:polygon(0 0,100% 0,100% 25%,45% 25%,45% 52%,100% 52%,100% 70%,15% 70%,15% 100%,0 100%)}
+40%{filter:contrast(1.6);opacity:.7;clip-path:polygon(0 0,100% 0,100% 50%,70% 50%,70% 72%,100% 72%,100% 100%,0 100%)}
+100%{filter:none;opacity:1;clip-path:inset(0)}
+}
+@media(prefers-reduced-motion:reduce){#animated-name .name-glyph.pixel-out,#animated-name .name-glyph.pixel-in{animation:none!important}}
