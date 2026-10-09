@@ -9,3 +9,23 @@
 
 /* Homepage typography and left-anchored editorial layout */
 .home-page{max-width:none;width:100%;padding-left:clamp(26px,7.5vw,150px);padding-right:6%}.home-page .hero{max-width:1060px;min-height:calc(100svh - 135px);margin:0;align-items:flex-start;justify-content:center;text-align:left}.home-page .hero h1{font-size:clamp(66px,8.5vw,132px);letter-spacing:-.065em;line-height:1.02;margin:22px 0 30px}.home-page .hero .eyebrow{font-size:clamp(12px,1vw,14px);letter-spacing:.22em}.home-page .hero .lead{font-size:clamp(16px,1.65vw,22px);line-height:1.55;max-width:950px;font-weight:500}.home-page .hero p{font-size:clamp(16px,1.3vw,19px);line-height:1.75;max-width:720px;margin-top:22px}.home-page .hero .actions{margin-top:32px;gap:14px}.home-page .hero .btn{font-size:14px;padding:16px 26px}@media(min-width:1500px){.home-page{padding-left:clamp(120px,9vw,200px)}}@media(max-width:760px){.home-page{padding:0 6%}.home-page .hero{min-height:calc(100svh - 170px)}.home-page .hero h1{font-size:clamp(54px,11vw,78px);overflow-wrap:break-word}.home-page .hero .lead{font-size:16px}.home-page .hero p{font-size:16px}.home-page .hero .btn{padding:14px 20px}}
+
+/* v0.4: designed navigation and unmistakably left-aligned homepage */
+header{min-height:84px;height:auto;padding:14px clamp(22px,4vw,76px);gap:24px;background:#0b0c0df5;backdrop-filter:blur(16px);border-bottom:1px solid #25272a}
+header .logo{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:48px;height:48px;border:1px solid #ed6b2d70;border-radius:12px;background:linear-gradient(145deg,#2c1a13,#101112);color:#ff884c;font-size:24px;letter-spacing:-.09em;box-shadow:inset 0 1px 0 #ffffff0b}
+header nav{display:flex;align-items:center;gap:5px;padding:5px;border:1px solid #292c2e;border-radius:12px;background:#141618}
+header nav a{display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:9px 16px;border-radius:8px;color:#b8b9bb;font-size:13px;font-weight:600;letter-spacing:.01em;transition:background .2s,color .2s,box-shadow .2s}
+header nav a:hover{background:#26282a;color:#fff}
+header nav a[aria-current=page]{background:#382318;color:#ff985f;box-shadow:inset 0 0 0 1px #ed6b2d45}
+header .github{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;padding:12px 17px;border:1px solid #383b3e;border-radius:9px;background:#191b1d;font-weight:600;transition:border-color .2s,background .2s}
+header .github:hover{border-color:#ed6b2d;background:#26201b}
+.home-page{width:100%;max-width:none;margin:0;padding:0 clamp(26px,5vw,88px)}
+.home-page .hero{min-height:calc(100svh - 150px);max-width:1250px;width:100%;margin:0;justify-content:center;align-items:flex-start;text-align:left;padding:0 0 5vh}
+.home-page .hero h1{font-size:clamp(76px,9.5vw,154px);line-height:.98;letter-spacing:-.075em;margin:26px 0 34px;max-width:1200px}
+.home-page .hero .eyebrow{font-size:14px}
+.home-page .hero .lead{font-size:clamp(19px,1.8vw,27px);max-width:1100px;letter-spacing:-.025em}
+.home-page .hero p{font-size:clamp(17px,1.4vw,21px);max-width:750px}
+.home-page .hero .actions{margin-top:36px}
+.home-page .hero .btn{font-size:15px;padding:18px 30px}
+@media(max-width:950px){header{gap:14px}header nav a{padding:9px 10px}}
+@media(max-width:760px){header{padding:14px 5%;gap:12px}header .logo{min-width:43px;height:43px}header nav{order:3;width:100%;overflow-x:auto;justify-content:flex-start;gap:3px;padding:4px}header nav a{white-space:nowrap;padding:9px 12px}header .github{margin-left:auto;padding:10px 13px}.home-page{padding:0 6%}.home-page .hero{min-height:calc(100svh - 190px);padding:32px 0 50px}.home-page .hero h1{font-size:clamp(56px,12vw,88px);line-height:1.02;margin:24px 0 28px}.home-page .hero .lead{font-size:17px}.home-page .hero p{font-size:16px}.home-page .hero .btn{padding:15px 21px;font-size:13px}}
