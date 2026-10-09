@@ -116,3 +116,12 @@ main{max-width:1440px;padding:0 clamp(30px,5.5vw,105px)}
 #animated-name .name-letter{display:inline-block;transform:scaleX(1);transition:transform 240ms cubic-bezier(.25,.8,.25,1);will-change:transform}
 #animated-name .name-letter.mirror-active{transform:scaleX(-1)}
 @media(prefers-reduced-motion:reduce){#animated-name .name-letter{transition:none!important;transform:none!important}}
+
+/* Binary name effect: preserve original word colors and glyph widths */
+#animated-name .name-first,#animated-name .name-first .name-glyph{color:#f3f4f4!important}
+#animated-name .name-last,#animated-name .name-last .name-glyph{color:#ff7431!important}
+#animated-name .name-letter{position:relative;display:inline-grid;grid-template-columns:1fr;vertical-align:baseline;transform:none!important;transition:none!important;will-change:auto}
+#animated-name .name-letter::before{content:"";grid-area:1/1;visibility:hidden}
+#animated-name .name-letter .name-glyph{grid-area:1/1;display:block;transform:none!important;transition:opacity 100ms ease;text-align:left}
+#animated-name .name-letter .name-glyph.binary-active{opacity:.84}
+@media(prefers-reduced-motion:reduce){#animated-name .name-letter .name-glyph{transition:none!important}}
