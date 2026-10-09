@@ -163,3 +163,10 @@ header nav a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radi
 
 /* Fully rounded ends on the solid-orange sliding navigation highlight */
 header nav .nav-droplet{border-radius:999px!important}
+
+/* v0.9: keep external GitHub action visible and consistent with the fluid nav */
+header .github{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;white-space:nowrap;padding:11px 20px;border:1px solid #ee6d2d!important;border-radius:999px;background:rgba(238,109,45,.11)!important;color:#fff!important;font-size:14px;font-weight:700;letter-spacing:.01em;transition:background .25s ease,box-shadow .25s ease,transform .25s ease}
+header .github:hover,header .github:focus-visible{background:#ee6d2d!important;color:#fff!important;box-shadow:0 5px 22px #ee6d2d33;transform:translateY(-1px)}
+header .github:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:760px){header .github{padding:10px 14px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){header .github{transition:none!important;transform:none!important}}
