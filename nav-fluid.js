@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function move(target, immediate) {
     if (!target) return;
     if (immediate) pill.style.transition = "none";
+    const previousLeft = parseFloat(pill.style.left);
+    const previousWidth = parseFloat(pill.style.width);
     const n = nav.getBoundingClientRect();
     const b = target.getBoundingClientRect();
     pill.style.left = (b.left - n.left + 2) + "px";
@@ -20,6 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
     pill.style.width = Math.max(0, b.width - 4) + "px";
     pill.style.height = Math.max(0, b.height - 7) + "px";
     pill.classList.add("is-ready");
+    if (!immediate && !reduce.matches && Number.isFinite(previousLeft) && Number.isFinite(previousWidth) && pill.animate) {
+      const destinationLeft = b.left - n.left + 2;
+      const distance = Math.abs(destinationLeft - previousLeft);
+      if (distance > 8) {
+        const direction = destinationLeft > previousLeft ? 1 : -1;
+        pill.getAnimations().forEach(function (animation) { animation.cancel(); });
+        pill.animate([
+          { transform: "translateX(0) scaleX(1) scaleY(1)", borderRadius: "999px" },
+          { transform: "translateX(" + (-direction * Math.min(distance * .11, 13)) + "px) scaleX(1.18) scaleY(.87)", borderRadius: "45% 55% 55% 45% / 50% 50% 50% 50%", offset: .35 },
+          { transform: "translateX(0) scaleX(.95) scaleY(1.05)", borderRadius: "999px", offset: .8 },
+          { transform: "translateX(0) scaleX(1) scaleY(1)", borderRadius: "999px" }
+        ], { duration: 510, easing: "cubic-bezier(.2,.75,.2,1)" });
+      }
+    }
     if (immediate) requestAnimationFrame(function () { pill.style.transition = ""; });
   }
   move(active, true);
