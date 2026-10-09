@@ -170,3 +170,11 @@ header .github:hover,header .github:focus-visible{background:#ee6d2d!important;c
 header .github:focus-visible{outline:2px solid #fff;outline-offset:3px}
 @media(max-width:760px){header .github{padding:10px 14px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){header .github{transition:none!important;transform:none!important}}
+
+/* v1.0: true fluid nav highlight with matching capsule silhouette */
+header nav{position:relative;isolation:isolate}
+header nav .nav-venom{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none;filter:drop-shadow(0 4px 10px rgba(238,109,45,.2))}
+header nav .nav-venom path{fill:#ee6d2d}
+header nav a{position:relative;z-index:1;color:#fff!important;border:0!important;border-radius:999px!important}
+header nav a[aria-current=page]{background:transparent!important;box-shadow:none!important}
+header nav .nav-droplet{display:none!important}
