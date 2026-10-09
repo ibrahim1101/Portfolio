@@ -110,3 +110,9 @@ main{max-width:1440px;padding:0 clamp(30px,5.5vw,105px)}
 #project-cards .card h2 .project-title-link{display:inline;color:#f3f4f4;background:none;border:0;border-radius:0;padding:0;font:inherit;font-weight:inherit;line-height:inherit;box-shadow:none;text-decoration:none;transition:color .2s ease}
 #project-cards .card h2 .project-title-link:hover,#project-cards .card h2 .project-title-link:focus-visible{color:#ff742f;background:none}
 #project-cards .card h2 .project-title-link:focus-visible{outline:2px solid #ff742f;outline-offset:5px;border-radius:2px}
+
+/* Homepage name: subtle, isolated single-character mirror effect */
+#animated-name .name-word{display:block}
+#animated-name .name-letter{display:inline-block;transform:scaleX(1);transition:transform 240ms cubic-bezier(.25,.8,.25,1);will-change:transform}
+#animated-name .name-letter.mirror-active{transform:scaleX(-1)}
+@media(prefers-reduced-motion:reduce){#animated-name .name-letter{transition:none!important;transform:none!important}}
