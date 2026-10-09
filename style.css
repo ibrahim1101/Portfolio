@@ -125,3 +125,5 @@ main{max-width:1440px;padding:0 clamp(30px,5.5vw,105px)}
 #animated-name .name-letter .name-glyph{grid-area:1/1;display:block;transform:none!important;transition:opacity 100ms ease;text-align:left}
 #animated-name .name-letter .name-glyph.binary-active{opacity:.84}
 @media(prefers-reduced-motion:reduce){#animated-name .name-letter .name-glyph{transition:none!important}}
+
+#animated-name .name-letter::before{content:attr(data-original);white-space:pre}
