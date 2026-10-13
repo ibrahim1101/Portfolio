@@ -72,3 +72,6 @@
 .hero .blackhole-image{position:absolute;inset:0;background-image:url('/media/blackhole-reference.png');background-size:cover;background-position:72% center;transform:none;animation:none;filter:none;opacity:1}
 .hero .blackhole-glow{animation:none;opacity:.12}
 @media(max-width:700px){.hero .blackhole-image{background-position:65% center}}
+
+/* Preferred user-supplied high-resolution black-hole wallpaper. Upload to public/media/black-hole-hero.jpg. */
+.hero .blackhole-image{background-image:url('/media/black-hole-hero.jpg'),url('/media/blackhole-reference.png');background-size:cover,cover;background-position:center center,72% center;background-repeat:no-repeat;animation:none!important;transform:none!important;filter:none!important}
