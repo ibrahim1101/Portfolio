@@ -95,3 +95,31 @@
 .orbit-information{height:550px;min-height:550px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
 @media(max-width:900px){.orbit-information{height:auto;min-height:550px;max-height:650px}}
 @media(max-width:600px){.orbit-information{min-height:570px;max-height:700px}}
+
+/* Orbit polish: evenly spaced planets and a compact, non-scrolling project preview. */
+.orbit-layout>.solar-system{width:min(100%,560px)!important;max-width:560px!important}
+.orbit-layout{align-items:center;gap:clamp(28px,4vw,60px)}
+.orbit-layout>.orbit-information{
+  box-sizing:border-box;height:490px!important;min-height:490px!important;
+  max-height:none!important;overflow:visible!important;overflow-y:visible!important;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:18px 0 18px 38px;
+}
+.orbit-information .orbit-counter{flex-shrink:0}
+.orbit-information .orbit-indicator{margin:17px 0 20px;flex-shrink:0}
+.orbit-information h3{font-size:clamp(43px,4.1vw,66px);margin:12px 0 8px;line-height:1.02}
+.orbit-information .orbit-tagline{font-size:16px!important;margin:8px 0 10px}
+.orbit-information>p{font-size:12px;line-height:1.65;margin:8px 0;max-width:480px}
+.orbit-information .orbit-technologies{margin:12px 0 16px;gap:6px}
+.orbit-information .orbit-technologies span{padding:6px 9px;font-size:9px}
+.orbit-information .orbit-link{margin-top:3px}
+.orbit-information .orbit-controls{margin-top:16px;flex-shrink:0;gap:13px}
+.orbit-information .orbit-controls button{width:35px;height:35px}
+@media(max-width:900px){
+ .orbit-layout>.orbit-information{height:auto!important;min-height:410px!important;max-height:none!important;padding:25px 0 25px 25px}
+ .orbit-layout>.solar-system{max-width:520px!important}
+}
+@media(max-width:600px){
+ .orbit-layout>.orbit-information{min-height:430px!important;padding:18px 0 20px 20px}
+ .orbit-information h3{font-size:clamp(38px,11vw,55px)}
+}
