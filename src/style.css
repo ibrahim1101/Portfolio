@@ -88,4 +88,4 @@
 
 /* Orbital layout v2: a bounded square positioned within the grid, with no container-query positioning. */
 .orbit-layout>.solar-system{position:relative!important;display:block!important;width:min(100%,600px)!important;max-width:600px!important;height:auto!important;aspect-ratio:1/1!important;margin:0 auto!important;transform:none!important;contain:layout!important;overflow:visible!important}
-.orbit-layout>.solar-system>.orbit-fixed-planet{position:absolute!important;transform:translate(-50%,-50%)!important;animation:none!important;rotate:0deg!important;translate:none!important;inset:auto!important;z-index:10!important}
+.orbit-layout>.solar-system>.orbit-fixed-planet{position:absolute!important;transform:translate(-50%,-50%)!important;animation:none!important;rotate:0deg!important;translate:none!important;z-index:10!important}
