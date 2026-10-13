@@ -160,3 +160,14 @@
 @media(prefers-reduced-motion:reduce){
  .orbit-layout>.solar-system>.orbit-fixed-planet{will-change:auto}
 }
+
+
+/* Unreleased concepts stay visible but are not navigation targets. */
+.project-card-inactive{cursor:default}
+.project-card-inactive:hover{transform:none}
+.project-card-inactive .explore{opacity:.65;letter-spacing:.04em}
+.orbit-link-disabled{cursor:default;opacity:.58;pointer-events:none}
+.journey-event-inactive{cursor:default}
+.journey-event-inactive:hover{transform:none}
+.doc-group-title{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.doc-group-title span{font-size:.75rem;opacity:.65}
