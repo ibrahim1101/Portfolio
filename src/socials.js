@@ -1,7 +1,4 @@
-// Replace null with your exact public profile URL. Unconfigured icons remain non-clickable.
+// Only public professional profiles are exposed on the portfolio.
 export const socialProfiles = {
-  instagram: null,
-  facebook: null,
-  linkedin: null,
-  discord: null,
+  linkedin: 'https://www.linkedin.com/in/shaik-ibrahim-71836816a',
 };
