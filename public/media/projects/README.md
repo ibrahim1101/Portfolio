@@ -1,7 +1,7 @@
-# Screenshot gallery format
-For each project, put images in its slug directory and create gallery.json, e.g.:
-[
-  {"file":"dashboard.webp","caption":"Main dashboard"},
-  {"file":"findings.webp","caption":"Findings workspace"}
-]
-Use the slugs from src/data.js. Only publish images you own or have permission to share. Remove private data from screenshots.
+# Project screenshots
+
+Simply open the folder for your project and choose **Add file → Upload files**. Upload PNG, JPG, WebP, GIF or AVIF images, then commit. The website automatically discovers them at build time; **no gallery.json file is needed**.
+
+The folders for nScout, CERBERUS, SentinelLab, Locat, CaseTrace and VAPT-X have been initialized. Screenshots are displayed in filename order, and captions come from filenames.
+
+Please remove private data and credentials from screenshots before publishing.
