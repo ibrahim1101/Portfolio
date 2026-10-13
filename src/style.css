@@ -137,3 +137,16 @@
  box-shadow:0 0 25px color-mix(in srgb,var(--planet-color) 75%,transparent)!important;
 }
 .orbit-unlock{display:none!important}
+
+/* Align the spherical center, not the sphere-plus-label button, to the orbit.
+   Planet button: 46px sphere + 10px gap + ~12px label; center offset ~11px. */
+@media(min-width:901px){
+ .orbit-layout>.solar-system>.orbit-fixed-planet{
+  transform:translate(-50%,calc(-50% + 11px))!important;
+ }
+}
+@media(max-width:900px){
+ .orbit-layout>.solar-system>.orbit-fixed-planet{
+  transform:translate(-50%,calc(-50% + 10px))!important;
+ }
+}
