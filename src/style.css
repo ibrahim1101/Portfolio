@@ -81,3 +81,7 @@
 .solar-system{position:relative;overflow:visible;container-type:normal}
 .solar-system .planet-orbit{position:absolute;inset:0;transform:none!important;animation:none!important;pointer-events:none}
 .solar-system .planet-orbit .solar-planet{position:absolute;left:var(--planet-x);top:var(--planet-y);transform:translate(-50%,-50%)!important;rotate:0deg!important;animation:none!important;pointer-events:auto}
+
+/* Direct-child orbit buttons: percentages resolve against the solar-system itself. */
+.solar-system>.orbit-fixed-planet{position:absolute;transform:translate(-50%,-50%)!important;rotate:none!important;animation:none!important;z-index:8;pointer-events:auto}
+.solar-system{overflow:visible}
