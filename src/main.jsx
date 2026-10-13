@@ -30,8 +30,12 @@ function OrbitExplorer(){
        const phase=[-92,-24,32,94,154,214,276][i];
        const direction=[1,1,-1,1,-1,-1,1][i];
        const angle=phase*Math.PI/180+direction*elapsed/1000*(2*Math.PI/(95+i*12));
-       node.style.left=(50+radius*Math.cos(angle))+'%';
-       node.style.top=(50+radius*Math.sin(angle))+'%';
+       const size=root.clientWidth;
+       const x=(radius/100)*size*Math.cos(angle);
+       const y=(radius/100)*size*Math.sin(angle);
+       node.style.left='50%';
+       node.style.top='50%';
+       node.style.setProperty('--orbit-translate',x.toFixed(3)+'px '+y.toFixed(3)+'px');
      });}
      frame=requestAnimationFrame(tick);
    };
