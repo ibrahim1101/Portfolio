@@ -75,3 +75,9 @@
 
 /* Preferred user-supplied high-resolution black-hole wallpaper. Upload to public/media/black-hole-hero.jpg. */
 .hero .blackhole-image{background-image:url('/media/black-hole-hero.jpg'),url('/media/blackhole-reference.png');background-size:cover,cover;background-position:center center,72% center;background-repeat:no-repeat;animation:none!important;transform:none!important;filter:none!important}
+
+/* Orbit repair: anchor each planet to the solar-system box, not viewport cqw units.
+   Disable inherited transform animations that previously launched planets outside the orbit. */
+.solar-system{position:relative;overflow:visible;container-type:normal}
+.solar-system .planet-orbit{position:absolute;inset:0;transform:none!important;animation:none!important;pointer-events:none}
+.solar-system .planet-orbit .solar-planet{position:absolute;left:var(--planet-x);top:var(--planet-y);transform:translate(-50%,-50%)!important;rotate:0deg!important;animation:none!important;pointer-events:auto}
