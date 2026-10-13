@@ -67,3 +67,8 @@
 @media (max-width:900px) {.blackhole-image{background-size:auto 95%;background-position:70% center}}
 @media (max-width:600px) {.blackhole-image{background-size:auto 75%;background-position:64% 38%;opacity:.65}.solar-system{width:100%;aspect-ratio:1}}
 @media(prefers-reduced-motion:reduce){.planet-orbit,.planet-orbit .solar-planet{animation:none!important}.planet-orbit{transform:rotate(var(--orbit-initial))}.planet-orbit .solar-planet{rotate:calc(-1 * var(--orbit-initial))}}
+
+/* Static hero wallpaper: no animated image scaling or simulated spinning. */
+.hero .blackhole-image{position:absolute;inset:0;background-image:url('/media/blackhole-reference.png');background-size:cover;background-position:72% center;transform:none;animation:none;filter:none;opacity:1}
+.hero .blackhole-glow{animation:none;opacity:.12}
+@media(max-width:700px){.hero .blackhole-image{background-position:65% center}}
