@@ -89,3 +89,9 @@
 /* Orbital layout v2: a bounded square positioned within the grid, with no container-query positioning. */
 .orbit-layout>.solar-system{position:relative!important;display:block!important;width:min(100%,600px)!important;max-width:600px!important;height:auto!important;aspect-ratio:1/1!important;margin:0 auto!important;transform:none!important;contain:layout!important;overflow:visible!important}
 .orbit-layout>.solar-system>.orbit-fixed-planet{position:absolute!important;transform:translate(-50%,-50%)!important;animation:none!important;rotate:0deg!important;translate:none!important;z-index:10!important}
+
+/* Prevent the orbit layout from resizing as different project descriptions appear. */
+.orbit-layout{align-items:center}
+.orbit-information{height:550px;min-height:550px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+@media(max-width:900px){.orbit-information{height:auto;min-height:550px;max-height:650px}}
+@media(max-width:600px){.orbit-information{min-height:570px;max-height:700px}}
