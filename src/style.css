@@ -19,7 +19,7 @@
 
 /* v0.4 cinematic black hole hero: image-backed with subtle animated accretion */
 .blackhole-scene{position:absolute;inset:0;overflow:hidden;background:#050506;isolation:isolate;pointer-events:none}
-.blackhole-image{position:absolute;inset:-5%;background-image:url('/media/blackhole-reference.png');background-position:68% 47%;background-repeat:no-repeat;background-size:cover;transform:scale(1.025);animation:blackhole-drift 26s ease-in-out infinite alternate;will-change:transform}
+.blackhole-image{position:absolute;inset:-5%;background-image:url('/media/cool-background-blank-wallpaper-place-your-concept.jpg');background-position:68% 47%;background-repeat:no-repeat;background-size:cover;transform:scale(1.025);animation:blackhole-drift 26s ease-in-out infinite alternate;will-change:transform}
 .blackhole-accretion{position:absolute;width:min(68vw,930px);aspect-ratio:1;right:-8%;top:-31%;border-radius:50%;background:conic-gradient(from 40deg,transparent 0deg,#ffb98218 30deg,transparent 72deg,#fff2c71c 130deg,transparent 185deg,#e778431e 265deg,transparent 320deg);mask-image:radial-gradient(circle,transparent 47%,#000 51%,#000 56%,transparent 63%);filter:blur(10px);mix-blend-mode:screen;animation:blackhole-spin 38s linear infinite;opacity:.7}
 .blackhole-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 75% 35%,#f7a86b0b,transparent 47%);animation:blackhole-pulse 9s ease-in-out infinite alternate}
 .blackhole-stars{position:absolute;inset:0;background-image:radial-gradient(#ffffff90 .6px,transparent 1px),radial-gradient(#ffffff55 .7px,transparent 1px);background-size:163px 137px,239px 211px;background-position:27px 13px,80px 72px;opacity:.22}
@@ -69,12 +69,12 @@
 @media(prefers-reduced-motion:reduce){.planet-orbit,.planet-orbit .solar-planet{animation:none!important}.planet-orbit{transform:rotate(var(--orbit-initial))}.planet-orbit .solar-planet{rotate:calc(-1 * var(--orbit-initial))}}
 
 /* Static hero wallpaper: no animated image scaling or simulated spinning. */
-.hero .blackhole-image{position:absolute;inset:0;background-image:url('/media/blackhole-reference.png');background-size:cover;background-position:72% center;transform:none;animation:none;filter:none;opacity:1}
+.hero .blackhole-image{position:absolute;inset:0;background-image:url('/media/cool-background-blank-wallpaper-place-your-concept.jpg');background-size:cover;background-position:72% center;transform:none;animation:none;filter:none;opacity:1}
 .hero .blackhole-glow{animation:none;opacity:.12}
 @media(max-width:700px){.hero .blackhole-image{background-position:65% center}}
 
-/* Preferred user-supplied high-resolution black-hole wallpaper. Upload to public/media/black-hole-hero.jpg. */
-.hero .blackhole-image{background-image:url('/media/black-hole-hero.jpg'),url('/media/blackhole-reference.png');background-size:cover,cover;background-position:center center,72% center;background-repeat:no-repeat;animation:none!important;transform:none!important;filter:none!important}
+/* Preferred user-supplied high-resolution black-hole wallpaper. Upload to public/media/cool-background-blank-wallpaper-place-your-concept.jpg. */
+.hero .blackhole-image{background-image:url('/media/cool-background-blank-wallpaper-place-your-concept.jpg'),url('/media/cool-background-blank-wallpaper-place-your-concept.jpg');background-size:cover,cover;background-position:center center,72% center;background-repeat:no-repeat;animation:none!important;transform:none!important;filter:none!important}
 
 /* Orbit repair: anchor each planet to the solar-system box, not viewport cqw units.
    Disable inherited transform animations that previously launched planets outside the orbit. */
