@@ -171,3 +171,31 @@
 .journey-event-inactive:hover{transform:none}
 .doc-group-title{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .doc-group-title span{font-size:.75rem;opacity:.65}
+
+
+/* Header navigation: larger, copper-hover lift, accessible keyboard focus. */
+.header .nav{gap:clamp(14px,2vw,30px)}
+.header .nav a{
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.012em;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  transition:color .22s ease,transform .22s ease,text-shadow .22s ease;
+  will-change:transform;
+}
+.header .nav a:hover,.header .nav a:focus-visible{
+  color:#e99b65;
+  transform:translateY(-3px);
+  text-shadow:0 0 13px rgba(233,155,101,.28);
+}
+.header .nav a:focus-visible{outline:2px solid #e99b65;outline-offset:5px;border-radius:2px}
+@media(max-width:900px){
+  .header .nav{gap:24px}
+  .header .nav a{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .header .nav a{transition:color .15s ease;text-shadow:none;will-change:auto}
+  .header .nav a:hover,.header .nav a:focus-visible{transform:none}
+}
