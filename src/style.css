@@ -150,3 +150,13 @@
   transform:translate(-50%,calc(-50% + 10px))!important;
  }
 }
+
+/* Compositor-based orbital animation: preserve existing sphere/label alignment. */
+.orbit-layout>.solar-system>.orbit-fixed-planet{
+  translate:var(--orbit-translate, 0px 0px)!important;
+  will-change:translate;
+  transition:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .orbit-layout>.solar-system>.orbit-fixed-planet{will-change:auto}
+}
