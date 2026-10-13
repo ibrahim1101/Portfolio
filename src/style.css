@@ -123,3 +123,17 @@
  .orbit-layout>.orbit-information{min-height:430px!important;padding:18px 0 20px 20px}
  .orbit-information h3{font-size:clamp(38px,11vw,55px)}
 }
+
+/* Ring-aligned worlds: circular rings and quiet idle planets. */
+.orbit-layout>.solar-system>.solar-ring{transform:translate(-50%,-50%)!important;rotate:0deg!important}
+.orbit-layout>.solar-system>.solar-ring-0{width:54%!important;height:54%!important}
+.orbit-layout>.solar-system>.solar-ring-1{width:74%!important;height:74%!important}
+.orbit-layout>.solar-system>.solar-ring-2{width:94%!important;height:94%!important}
+.solar-system>.orbit-fixed-planet .planet-ball{transform:scale(1)!important;box-shadow:0 0 7px color-mix(in srgb,var(--planet-color) 14%,transparent)!important;filter:none!important}
+.solar-system>.orbit-fixed-planet:hover .planet-ball,
+.solar-system>.orbit-fixed-planet.hovered .planet-ball,
+.solar-system>.orbit-fixed-planet:focus-visible .planet-ball{
+ transform:scale(1.13)!important;
+ box-shadow:0 0 25px color-mix(in srgb,var(--planet-color) 75%,transparent)!important;
+}
+.orbit-unlock{display:none!important}
