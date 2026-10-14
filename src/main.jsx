@@ -56,7 +56,7 @@ const sentinelReports=[{name:"SOC Investigation Report",file:"SentinelLab_SOC_In
 function SentinelInvestigationReports(){
   const [ready,setReady]=useState({});
   const [preview,setPreview]=useState(null);
-  const getUrl=file=>new URL("documents/investigations/SL-IR-2026-001/"+encodeURIComponent(file),document.baseURI).href;
+  const getUrl=file=>new URL(`${import.meta.env.BASE_URL}documents/investigations/SL-IR-2026-001/${encodeURIComponent(file)}`,window.location.origin+window.location.pathname).href;
   useEffect(()=>{
     let active=true;
     sentinelReports.forEach(r=>fetch(getUrl(r.file),{method:"GET"}).then(async response=>{
