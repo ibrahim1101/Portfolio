@@ -6,6 +6,7 @@ import{motion,AnimatePresence}from'framer-motion';
 import{projects,skills}from'./data';
 import './style.css';
 import Services from './Services';
+import EmberTable from './EmberTable';
 import {socialProfiles} from './socials';
 const Scene=lazy(()=>import('./Scene'));
 function Header(){const[open,setOpen]=useState(false);const loc=useLocation();useEffect(()=>setOpen(false),[loc]);return <header className="header"><Link className="brand" to="/"><span className="brand-mark">SI<span>.</span></span><span className="brand-name">SHAIK IBRAHIM <small>SECURITY × ENGINEERING</small></span></Link><nav className={open?'nav open':'nav'}><Link to="/" onClick={()=>{sessionStorage.setItem("obsidian-home-scroll","0");if(loc.pathname==="/"&&!loc.hash)window.scrollTo({top:0,behavior:"smooth"});setOpen(false)}}>Home</Link><Link to={{pathname:"/",hash:"#projects"}} onClick={e=>{if(loc.pathname==="/"&&loc.hash==="#projects"){e.preventDefault();document.getElementById("projects")?.scrollIntoView({behavior:"smooth"})}setOpen(false)}}>Projects</Link><Link to={{pathname:"/",hash:"#orbit"}} onClick={e=>{if(loc.pathname==="/"&&loc.hash==="#orbit"){e.preventDefault();document.getElementById("orbit")?.scrollIntoView({behavior:"smooth"})}setOpen(false)}}>Universe</Link><Link to="/services">Services</Link><Link to="/documents">Resources</Link><Link to="/resume">Resume</Link><a href="https://github.com/ibrahim1101" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight size={14}/></a><a href="https://www.linkedin.com/in/shaik-ibrahim-71836816a" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={14}/></a></nav><button className="mobile-menu" onClick={()=>setOpen(!open)} aria-label="Toggle menu">{open?<X/>:<Menu/>}</button></header>}
@@ -89,6 +90,6 @@ function App(){
     const raf=requestAnimationFrame(()=>requestAnimationFrame(restore));
     return()=>cancelAnimationFrame(raf);
   },[loc.key,loc.pathname,loc.hash,navigationType]);
-  return <><Header/><main><Routes><Route path="/" element={<Home/>}/><Route path="/project/:slug" element={<Project/>}/><Route path="/documents" element={<Documents/>}/><Route path="/services" element={<Services/>}/><Route path="/resume" element={<ResumePage/>}/><Route path="*" element={<div className="not-found"><h1>404</h1><Link to="/">RETURN HOME</Link></div>}/></Routes></main><Footer/></>
+  return <><Header/><main><Routes><Route path="/" element={<Home/>}/><Route path="/project/:slug" element={<Project/>}/><Route path="/documents" element={<Documents/>}/><Route path="/services" element={<Services/>}/><Route path="/demo/ember-table" element={<EmberTable/>}/><Route path="/resume" element={<ResumePage/>}/><Route path="*" element={<div className="not-found"><h1>404</h1><Link to="/">RETURN HOME</Link></div>}/></Routes></main><Footer/></>
 }
 createRoot(document.getElementById('root')).render(<HashRouter><App/></HashRouter>);
