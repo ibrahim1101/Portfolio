@@ -36,7 +36,7 @@ The static production website is in `dist/`.
 - `public/documents/`: master guides and other public PDFs; link them from `src/data.js`.
 - `src/main.jsx`: site sections, routing and interactions.
 
-The placeholder `hello@example.com` email is **not a real contact address**. Replace it with your preferred email before publishing, or replace the contact button with your actual LinkedIn profile. No personal contact details were guessed.
+Contact details are maintained in `src/main.jsx` and `src/socials.js`; inspect current values before publishing. The earlier placeholder-email warning was historical and does not establish the current deployed contact configuration.
 
 ## Important content notes
 
